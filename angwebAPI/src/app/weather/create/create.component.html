@@ -1,0 +1,12 @@
+<form [formGroup]="createForm" (ngSubmit)="createForecast()">
+  <h2 class="text-primary"> Add Weather Forecast</h2>
+  <div class="form-group">
+      <input type="number" class="form-control" formControlName="temperatureC" placeholder="Tempracture" >
+  </div>
+  <div class="form-group">
+      <input type="text" class="form-control" formControlName="summary" placeholder="Summary" > 
+  </div>
+  <button class="btn btn-outline-primary">Add Forcast</button>
+  <button class="btn btn-outline-secondry" (click)="cancelCreateMode()">Cancel</button>
+  </form>
+  

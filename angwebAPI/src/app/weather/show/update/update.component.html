@@ -1,0 +1,11 @@
+<form #updateForm="ngForm">
+<div class="form-group">
+    <input type="text" class="form-control" name="temperatureC" placeholder="Tempracture" [(ngModel)]="ForecastHandler.temperatureC">
+</div>
+<div class="form-group">
+    <input type="text" class="form-control" name="summary" placeholder="Summary" [(ngModel)]="ForecastHandler.summary"> 
+</div>
+<button class="btn btn-outline-primary" (click)="UpdateForecast()">Update</button>
+<button class="btn btn-outline-secondry" (click)="CancelShowModeU()">Cancel</button>
+
+</form>

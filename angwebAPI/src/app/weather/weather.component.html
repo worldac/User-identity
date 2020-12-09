@@ -1,0 +1,14 @@
+
+<div *ngIf="!showMode && !createMode" class="container text-center mt-5">
+  <h2 class="text-primary">Weather Forecasts</h2> <hr>
+  <button class="btn btn-primary mr-4" (click)="inShow()">Show Weather</button>
+  <button class="btn btn-secondary" (click)="inCreateMode()">Add New</button>
+</div>
+
+<div *ngIf="showMode && !createMode" class="container text-center mt-5">
+  <app-show (cancelShow)="cancelShow($event)"> </app-show>
+</div>
+<div *ngIf="!showMode && createMode" class="container text-center mt-5">
+  <app-create (createModeHandler)="cancelAddMode($event)"> </app-create>
+</div>
+

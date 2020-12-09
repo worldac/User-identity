@@ -1,0 +1,25 @@
+<div *ngIf="!ShowUpdate">
+  <div class="card-deck">
+    <div *ngFor="let forecast of forecasts" class="card" style="width: 18rem; margin-top: 80px;">
+      <div class="card-body">
+        <h5 class="card-title">Weather</h5>
+        {{forecast.id}},{{forecast.temperatureC}},{{forecast.summary}}
+        <div>
+          <a class="btn btn-primary stretched-link mt-1" (click)="updateT(forecast)">Update</a>
+          <a class="btn btn-primary stretched-link mt-1 ml-5" (click)="deleteT(forecast.id)">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-4" (click)="CancelShowMode()">Back</button>
+  </div>
+  <div *ngIf="ShowUpdate" class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
+        <h2 class="text-center text-primary">Update Forecast</h2> <hr>
+      </div>
+      <div>
+        <app-update (ShowModeU)="CancelShowU($event)" [ForecastHandler]="forecastRec"></app-update>
+      </div>
+    </div>
+  </div>
